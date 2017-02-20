@@ -3,6 +3,8 @@ package io.pudge;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -77,6 +79,8 @@ public class OptiDataCenterApp {
                 serverList.add(server);
                 lineAccount ++;
             }
+
+            Collections.sort(serverList);
 
         }catch(IOException e){
             e.printStackTrace();
