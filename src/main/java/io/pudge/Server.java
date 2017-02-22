@@ -7,7 +7,7 @@ public class Server implements Comparable<Server> {
     private int id;
     private int slotsAccount;
     private int capacity;
-    private int poolId;
+    private int poolId=-1;
     private int row;
     private int column;
 
@@ -17,12 +17,18 @@ public class Server implements Comparable<Server> {
     }
 
     public void printServer () {
-        System.out.print(row);
-        System.out.print(' ');
-        System.out.print(column);
-        System.out.print(' ');
-        System.out.print(poolId);
+        if (poolId>-1) {
+            System.out.print(row);
+            System.out.print(' ');
+            System.out.print(column);
+            System.out.print(' ');
+            System.out.print(poolId);
+        } else {
+            System.out.print('x');
+        }
+
         System.out.println();
+
     }
 
     public int getId() {
