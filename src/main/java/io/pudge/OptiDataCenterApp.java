@@ -50,7 +50,7 @@ public class OptiDataCenterApp {
             for(int i = 0; i < ROW; i++){
                 for(int j = 0; j < SLOT_ACCOUNT; j++){
                     Slot slot = new Slot(i, j);
-                    slot.setId(i+j);
+                    slot.setId(i*SLOT_ACCOUNT+j);
                     slot.setAvailable(true);
                     slotList.add(slot);
                     availableSlotList.add(slot);
@@ -63,7 +63,7 @@ public class OptiDataCenterApp {
                 values = currentLine.split(SEPERATOR);
                 int r = Integer.parseInt(values[0]);
                 int c = Integer.parseInt(values[1]);
-                Slot slot = slotList.get(r + c);
+                Slot slot = slotList.get(r*SLOT_ACCOUNT + c);
                 slot.setAvailable(false);
                 unavailableSlotList.add(slot);
                 availableSlotList.remove(slot);
